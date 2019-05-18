@@ -11,6 +11,8 @@ public class DayTemperaturePair implements WritableComparable<DayTemperaturePair
   private int day;
   private double temperature;
 
+  public DayTemperaturePair() {}
+
   public DayTemperaturePair(int day, double temperature) {
     this.day = day;
     this.temperature = temperature;
