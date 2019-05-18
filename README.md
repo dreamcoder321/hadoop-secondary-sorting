@@ -1,4 +1,6 @@
+# Read me 
 
+cd hadoop-join
 start-yarn.sh
 start-dfs.sh
 hadoop fs -rm -r -f /user/hduser/output/
