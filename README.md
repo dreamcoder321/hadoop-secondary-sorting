@@ -1,4 +1,4 @@
-# hadoop-secondary-sorting
+
 start-yarn.sh
 start-dfs.sh
 hadoop fs -rm -r -f /user/hduser/output/
