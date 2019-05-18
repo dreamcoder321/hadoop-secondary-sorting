@@ -17,6 +17,7 @@ cd target
 
 export HADOOP_CLASSPATH=hadoop-secondary-sort-1.0-SNAPSHOT-jar-with-dependencies.jar
 
+#upload weather file from local filesystem to hdfs
 hadoop fs -copyFromLocal weather_shuf.csv /user/hduser/input
 
 hadoop com.secomdarysort.DriverSecondarySort /user/hduser/input/weather_shuf.csv      /user/hduser/output
