@@ -37,10 +37,10 @@ public class DayTemperaturePair implements WritableComparable<DayTemperaturePair
   @Override
   public int compareTo(DayTemperaturePair o) {
 
-    int cmp = day - o.day;
+    int cmp = day - o.getDay();
     if (cmp != 0) return cmp;
 
-    return Double.compare(o.temperature, temperature);
+    return Double.compare(o.getTemperature(), temperature);
   }
 
   @Override
@@ -52,7 +52,7 @@ public class DayTemperaturePair implements WritableComparable<DayTemperaturePair
   @Override
   public void readFields(DataInput dataInput) throws IOException {
     day = dataInput.readInt();
-    temperature = dataInput.readInt();
+    temperature = dataInput.readDouble();
   }
 
   @Override
