@@ -15,8 +15,8 @@ public class DriverSecondarySort {
 
     Configuration conf = new Configuration();
     final Job job = Job.getInstance(conf, "hadoopSecondarySortJob");
-    Path outputPath = new Path(args[2]);
-    FileInputFormat.addInputPath(job, new Path(args[1]));
+    Path outputPath = new Path(args[1]);
+    FileInputFormat.addInputPath(job, new Path(args[0]));
     FileOutputFormat.setOutputPath(job, outputPath);
     outputPath.getFileSystem(conf).delete(outputPath, true);
     job.setJarByClass(DriverSecondarySort.class);

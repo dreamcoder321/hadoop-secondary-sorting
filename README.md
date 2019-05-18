@@ -13,13 +13,11 @@ sudo mvn install assembly:single
 
 cd target
 
-export HADOOP_CLASSPATH=hadoop-join-1.0-SNAPSHOT-jar-with-dependencies.jar
+export HADOOP_CLASSPATH=hadoop-secondary-sort-1.0-SNAPSHOT-jar-with-dependencies.jar
 
-hadoop fs -copyFromLocal customer.tbl /user/hduser/input
+hadoop fs -copyFromLocal weather_shuf.csv /user/hduser/input
 
-hadoop fs -copyFromLocal orders.tbl /user/hduser/input
-
-hadoop com.mozammal.MapSideJoinMainJob /user/hduser/input/customer.tbl  /user/hduser/input/orders.tbl    /user/hduser/output
+hadoop com.secomdarysort.DriverSecondarySort /user/hduser/input/weather_shuf.csv      /user/hduser/output
 
 hadoop fs -ls  /user/hduser/output/*
 
