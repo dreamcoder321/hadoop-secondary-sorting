@@ -21,8 +21,6 @@ hadoop com.secomdarysort.DriverSecondarySort /user/hduser/input/weather_shuf.csv
 
 hadoop fs -ls  /user/hduser/output/*
 
-hadoop fs -cat  /user/hduser/output/part-m-00000 | shuf -n 10
-
-hadoop fs -cat  /user/hduser/output/part-m-00001 | shuf -n 10
+hadoop fs -cat  /user/hduser/output/part-* | sort
 
 """"
