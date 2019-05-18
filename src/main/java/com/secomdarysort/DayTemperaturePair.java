@@ -54,4 +54,23 @@ public class DayTemperaturePair implements WritableComparable<DayTemperaturePair
     day = dataInput.readInt();
     temperature = dataInput.readInt();
   }
+
+  @Override
+  public int hashCode() {
+    return day * 179 + (int) temperature;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o instanceof DayTemperaturePair) {
+      DayTemperaturePair dayTemperaturePair = (DayTemperaturePair) o;
+      return day == dayTemperaturePair.day && temperature == dayTemperaturePair.temperature;
+    }
+    return false;
+  }
+
+  @Override
+  public String toString() {
+    return "( " + day + " , " + temperature + " )";
+  }
 }
