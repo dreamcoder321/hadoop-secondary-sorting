@@ -9,6 +9,8 @@ hadoop fs -rm -r -f /user/hduser/output/
 
 export HADOOP_CLASSPATH=/usr/lib/jvm/jdk1.7.0_80/lib/tools.jar
 
+cd hadoop-secondary-sorting
+
 sudo mvn install assembly:single
 
 cd target
